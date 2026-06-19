@@ -1,65 +1,64 @@
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login - iSK</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - iSK</title>
 
-        <meta name="title" content="Login - iSK" />
-        <meta property="og:title" content="Login - iSK" />
-        <meta name="twitter:title" content="Login - iSK">
+    <meta name="title" content="Login - iSK" />
+    <meta property="og:title" content="Login - iSK" />
+    <meta name="twitter:title" content="Login - iSK">
 
-        <meta name="description" content="Login to manage your Suankularb Wittayalai related informations." />
-        <meta property="og:description" content="Login to manage your Suankularb Wittayalai related informations." />
-        <meta name="twitter:description" content="Login to manage your Suankularb Wittayalai related informations.">
+    <meta name="description" content="Login to manage your Suankularb Wittayalai related informations." />
+    <meta property="og:description" content="Login to manage your Suankularb Wittayalai related informations." />
+    <meta name="twitter:description" content="Login to manage your Suankularb Wittayalai related informations.">
 
-        <meta property="og:type" content="website" />
-        <!-- <meta property="og:url" content="http://www.pixelpxed.xyz/timetable/" /> -->
+    <meta property="og:type" content="website" />
+    <!-- <meta property="og:url" content="http://pxedition.vercel.app/timetable/" /> -->
 
-        <link rel="stylesheet" href="./assets/css/preset.css">
-        <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/css/preset.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
 
-        <script src="./assets/js/cookiefunc.js" defer></script>
-        <script src="./assets/js/preset.js" defer></script>
-        <script src="./assets/js/login.js" defer></script>
+    <script src="./assets/js/cookiefunc.js" defer></script>
+    <script src="./assets/js/preset.js" defer></script>
+    <script src="./assets/js/login.js" defer></script>
 
-        <noscript>
-            <meta http-equiv="refresh" content="0; url=/htmlerror/noscript.html" />
-        </noscript>
-    </head>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=/htmlerror/noscript.html" />
+    </noscript>
+</head>
 
-    <body>
-        <div class="navbar">
-            <a href="../">Home</a>
-            <a href="../timetable/">Timetable</a>
-            <a href="./" style="opacity: 1;">iSK</a>
-            <div class="navbar-right">
-                <a href="./login.html" style="opacity: 1;">Sign In</a>
+<body>
+    <div class="navbar">
+        <a href="../">Home</a>
+        <a href="../timetable/">Timetable</a>
+        <a href="./" style="opacity: 1;">iSK</a>
+        <div class="navbar-right">
+            <a href="./login.html" style="opacity: 1;">Sign In</a>
+        </div>
+    </div>
+    <div class="login-wrapper">
+        <div class="login-description-wrapper">
+            <div class="login-description">
+                <div>
+                    <h1 class="login-header">เข้าสู่ระบบ</h1>
+                    <p class="login-header" style="opacity: 0.5;">Sign In</p>
+                </div>
+                <img src="./assets/img/Suankularb_Wittayalai_School_logo.png">
+            </div>
+
+            <div class="login-field">
+                <input id="username" class="login-inputzone-input" type="text" placeholder="ชื่อผู้ใช้ | Username">
+                <input id="password" class="login-inputzone-input" type="password" placeholder="รหัสผ่าน | Password">
+                <div id="signin" class="login-inputzone-input" onclick="signIn()">เข้าสู่ระบบ | Sign In</div>
+                <p id="incorrect-input" class="incorrect-input">เกิดข้อผิดผลาดที่ไม่ทราบขึ้น<br>An unknown error
+                    occured.</p>
             </div>
         </div>
-        <div class="login-wrapper">
-            <div class="login-description-wrapper">
-                <div class="login-description">
-                    <div>
-                        <h1 class="login-header">เข้าสู่ระบบ</h1>
-                        <p class="login-header" style="opacity: 0.5;">Sign In</p>
-                    </div>
-                    <img src="./assets/img/Suankularb_Wittayalai_School_logo.png">
-                </div>
+    </div>
+    <p class="copyright">© 2022 The iSK Team. All rights reserved</p>
+</body>
 
-                <div class="login-field">
-                    <input id="username" class="login-inputzone-input" type="text" placeholder="ชื่อผู้ใช้ | Username">
-                    <input id="password" class="login-inputzone-input" type="password"
-                        placeholder="รหัสผ่าน | Password">
-                    <div id="signin" class="login-inputzone-input" onclick="signIn()">เข้าสู่ระบบ | Sign In</div>
-                    <p id="incorrect-input" class="incorrect-input">เกิดข้อผิดผลาดที่ไม่ทราบขึ้น<br>An unknown error
-                        occured.</p>
-                </div>
-            </div>
-        </div>
-        <p class="copyright">© 2022 The iSK Team. All rights reserved</p>
-    </body>
-
-    </html>
+</html>
