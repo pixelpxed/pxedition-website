@@ -39,9 +39,9 @@ function fetchToDo() {
             console.warn("Failed to fetch pawin.me API, opening to-do failed.");
             return popupOK(
                 `Can't connect to 'pawin.me' API.`, 
-                `Timetable couldn't get an reponse from the server required for to-do to display information.<br><br>
+                `Timetable couldn't get a response required to display to-do information.<br><br>
 
-                If you're connected to the internet, this problem is <abbr style="color: var(--color-gray-1); text-decoration: underline;" title="likely Pawin's server loose Ethernet cable.">likely on our end</abbr>. Meanwhile please try again later.<br><br>
+                If you're connected to the internet, this problem is <abbr style="color: var(--color-gray-1); text-decoration: underline;" title="likely Pawin's server loose Ethernet cable.">likely on our end</abbr> or services from our data-partner has ended. Please try again later.<br><br>
                 
                 <span class="popup-description">Error:</span><br>
                 ${error}`,
