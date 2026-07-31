@@ -70,7 +70,8 @@
                         </span>
                         <span>
                             Google account index
-                            <a onclick="popupOK(`Google Account Index Help`, `<img src='/timetable/assets/img/googleindexno.svg' style='width: 100%; border: 1px solid var(--color-gray-4); border-radius: 0.3rem; margin-top: 1rem;'>`)">
+                            <a
+                                onclick="popupOK(`Google Account Index Help`, `<img src='/timetable/assets/img/googleindexno.svg' style='width: 100%; border: 1px solid var(--color-gray-4); border-radius: 0.3rem; margin-top: 1rem;'>`)">
                                 (Help)
                             </a><br>
                             <span class="popup-description">
@@ -95,9 +96,9 @@
                     </p>
                     <div style="margin: 0.5em 0;">
                         <label class="settings-option-label">
-                            <input name="settings-class" type="radio" value="505">
+                            <input name="settings-class" type="radio" value="cu_cu_2390113_p13_sci_comsci">
                             <span>
-                                505 <span style="opacity: 50%;">(2024)</span>
+                                CU / 2390113 / Part 13 / Sci-ComSci
                             </span>
                         </label>
                         <label class="settings-option-label">
@@ -155,12 +156,24 @@
                             </span>
                         </label>
                         <label class="settings-option-label">
+                            <input name="settings-timelistoverride" type="radio" value="chulalongkorn">
+                            <span class="material-symbols-outlined">
+                                notes
+                            </span>
+                            <span>
+                                Chulalongkorn Regular<br>
+                                <span class="popup-description">
+                                    10 classes, 60 minutes, no breaks in between.
+                                </span>
+                            </span>
+                        </label>
+                        <label class="settings-option-label">
                             <input name="settings-timelistoverride" type="radio" value="regular">
                             <span class="material-symbols-outlined">
                                 notes
                             </span>
                             <span>
-                                Regular<br>
+                                Suankularb Regular<br>
                                 <span class="popup-description">
                                     10 classes, 50 minutes, no breaks in between.
                                 </span>
@@ -172,7 +185,7 @@
                                 notes
                             </span>
                             <span>
-                                Special<br>
+                                Suankularb Special<br>
                                 <span class="popup-description">
                                     10 classes, 40 minutes, no breaks in between.
                                 </span>
@@ -184,7 +197,7 @@
                                 notes
                             </span>
                             <span>
-                                Online<br>
+                                Suankularb Online<br>
                                 <span class="popup-description">
                                     10 classes, 40 minutes, 20 minutes every other classes.
                                 </span>
@@ -211,8 +224,7 @@
             </p>
             <div style="margin-left: 2em;">
                 <label class="settings-option-label">
-                    <input class="settings-subjectcard" type="checkbox" name="subjectcard"
-                    value="enable-subjectcard">
+                    <input class="settings-subjectcard" type="checkbox" name="subjectcard" value="enable-subjectcard">
                     <span class="material-symbols-outlined">
                         tips_and_updates
                     </span>
@@ -224,8 +236,7 @@
                     </span>
                 </label>
                 <label class="settings-option-label">
-                    <input class="settings-popupmode" type="checkbox" name="popupmode" 
-                        value="enable-popupmode">
+                    <input class="settings-popupmode" type="checkbox" name="popupmode" value="enable-popupmode">
                     <span class="material-symbols-outlined">
                         open_in_new
                     </span>
@@ -294,7 +305,8 @@
             </p>
             <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-left: 2em;">
                 <a class="popup-button popup-button-full" onclick="toggleDevMode()">Toggle Developer Mode</a>
-                <a class="popup-button popup-button-danger popup-button-full" onclick="resetTimetable()">Reset Timetable</a>
+                <a class="popup-button popup-button-danger popup-button-full" onclick="resetTimetable()">Reset
+                    Timetable</a>
             </div>
         </div>
     </div>

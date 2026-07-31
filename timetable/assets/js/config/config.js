@@ -1,14 +1,14 @@
 // Basic Timetable information.
-var timetableversion = "3.21.1a"
+var timetableversion = "3.21.2"
 
 // Timetable class fetch folder
 // Timetable will require a <classno>.json file in the folder
 // to be exact, for example 305.json, 306.json
-var classdatafetchpath = `/timetable/assets/js/config/classinfo/2_2024`
+var classdatafetchpath = `/timetable/assets/js/config/classinfo/1_2026`
 
 // Copyright year settings
 var fetchcopyrightyear = true
-var copyrightyear = "2023"
+var copyrightyear = "2026"
 
 // Elective classe (Is disabled in custom classes, since the user 
 // would put their data in by themselves, not requiring the feature.)
@@ -85,6 +85,28 @@ var classtimes = {
             "periodlength": 50,
             "starthour": 7,
             "startmin": 40,
+        }
+    },
+    "Chulalongkorn": {
+        "notify": false,
+        "list": [
+            "08:00 – 09:00",
+            "09:00 – 10:00",
+            "10:00 – 11:00",
+            "11:00 – 12:00",
+            "12:00 – 13:00",
+            "13:00 – 14:00",
+            "14:00 – 15:00",
+            "15:00 – 16:00",
+            "16:00 – 17:00",
+            "17:00 – 18:00",
+            "18:00 – 19:00"
+        ],
+        "timeremaining": {
+            "periodperday": 10,
+            "periodlength": 60,
+            "starthour": 8,
+            "startmin": 0,
         }
     },
 }

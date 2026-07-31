@@ -1,7 +1,7 @@
 var customclasses = undefined;
 var classes = undefined;
-var regularClasses = undefined
-var overrideTimeList = "Regular";
+var regularClasses = undefined;
+var overrideTimeList = "Chulalongkorn";
 
 const classTimetable = localStorage.getItem("timetable-classTimetable")
 const parameters = new URLSearchParams(window.location.search);
@@ -27,7 +27,7 @@ function toggleFetchPopup(element, htmlfile) {
             .then((res) => res.text())
             .then((html) => {
                 document.querySelector(".popup-center").insertAdjacentHTML("afterbegin", html)
-                
+
                 popupid = popupid + 1
                 document.querySelector(".full-page-overlay").style.display = "block"
                 document.querySelector(element).style.display = "block"
@@ -112,13 +112,13 @@ function setTimetableSystemInformation() {
 
 var customClassJSON
 function setClassVariables() {
-    if (classTimetable === "505") {
+    if (classTimetable === "cu_2390113_p13_sci_comsci") {
         fetch(`${classdatafetchpath}/${classTimetable}.json`)
             .then((res) => res.json())
-            .then((data) => { 
-                regularClasses = data.class               
+            .then((data) => {
+                regularClasses = data.class
                 subj = data.links
-                
+
                 if (data.override.state != true) {
                     classes = data.class
                 } if (data.override.state == true) {
@@ -154,8 +154,8 @@ function setClassVariables() {
         document.querySelectorAll(".icon-bigpicture").forEach((item) => {
             item.remove()
         })
-        
-        return 
+
+        return
     } else {
         popupConfirm("An error occured.", "Your Timetable data doesn't seem to be correct, click 'Yes' to setup your Timetable again.", "resetTimetable", "returnNothing")
     }
@@ -169,7 +169,7 @@ function fillClasses() {
     function gridFlagError(content = "No information provided.") {
         console.error(content)
         addNotification(content, `error`)
-    
+
         grid.classList.add("class-error")
         grid.classList.remove("class-joinable")
     }
@@ -178,11 +178,11 @@ function fillClasses() {
     document.querySelector("div.table").addEventListener('contextmenu', event => {
         event.preventDefault();
     })
-    
+
     document.querySelector(".table-grid-time-type").innerHTML = `Week ${calculateWeekNumber()}`
     for (let i = 0; i < Math.ceil(classes.length / 7); i++) {
         document.getElementById(`period${i}`).innerHTML = `${i}`
-        
+
         if (classTimetable !== "custom") {
             if (localStorage.getItem("timetable-overrideTimeList") === "auto") {
                 document.getElementById(`time${i}`).innerHTML = classtimes[classtime_type]["list"][i]
@@ -227,7 +227,7 @@ function fillClasses() {
             grid.classList.add("class-not-joinable")
             grid.classList.add("table-grid-dark")
         }
-        
+
         // Check for extending classes and apply style.
         if (classes[i] == "-extend") {
             // Error detection
@@ -291,9 +291,9 @@ function classJoiningSystem() {
                 var subjTitle = subjContent.subjname;
                 if (subjTitle === "") {
                     subjTitle = subjText
-                } 
+                }
 
-                var subjTeacher = `<a title="Lookup in MySK" target="_blank" href="https://www.mysk.school/lookup/teachers/results?full_name=${subjContent.teacher}">${subjContent.teacher}</a>`
+                var subjTeacher = `<p>${subjContent.teacher}</p>`
                 if (subjContent.teacher === "") {
                     subjTeacher = "<i style='opacity: 0.5;'>No Information</i>"
                 }
@@ -341,8 +341,8 @@ function classJoiningSystem() {
                                             <p class="popup-title">About This Period</p>
                                             <p>${subjDescription}</p>
                                             <div style="display: flex; gap: 0.5rem; width: max-content; max-width: 100%; margin: 0 0 0 auto;">
-                                                <a href="http://96.30.126.41/sk/index.php?mode=con03&group=437&id=1663&date_start=&date_end=" target="_blank" class="popup-button popup-button-outlined" style="gap: 0.25rem;">
-                                                    <span class="text-align: left;">View All Course Syllabus</span>
+                                                <a href="https://cugetreg.com/S/courses" target="_blank" class="popup-button popup-button-outlined" style="gap: 0.25rem;">
+                                                    <span class="text-align: left;">View All Courses</span>
                                                     <span class="material-symbols-outlined">open_in_new</span>
                                                 </a>
                                             </div>
@@ -381,15 +381,15 @@ function classJoiningSystem() {
         document.querySelectorAll(".class-joinable").forEach(grid => {
             var subjText = grid.innerHTML;
             grid.addEventListener("click", () => {
-                    var subjVdo = subj[subjText].videocall
-                    if (subjVdo !== "" && subjVdo !== null && subjVdo !== undefined) {
-                        console.log(`"${subjText}" class video call opened.`)
-                        return window.open(`https://meet.google.com/${subjVdo}?authuser=${gaiNumber}`);
-                    }
-                    if (subjVdo == "" || subjVdo == null || subjVdo == undefined) {
-                        return addNotification(`"${subjText}" class does not have a video call link.`, `error`)
-                    }
-                }),
+                var subjVdo = subj[subjText].videocall
+                if (subjVdo !== "" && subjVdo !== null && subjVdo !== undefined) {
+                    console.log(`"${subjText}" class video call opened.`)
+                    return window.open(`https://meet.google.com/${subjVdo}?authuser=${gaiNumber}`);
+                }
+                if (subjVdo == "" || subjVdo == null || subjVdo == undefined) {
+                    return addNotification(`"${subjText}" class does not have a video call link.`, `error`)
+                }
+            }),
                 grid.addEventListener("auxclick", () => {
                     var subjCls = subj[subjText].classroom
                     if (subjCls !== "" && subjCls !== null && subjCls !== undefined) {
@@ -466,7 +466,7 @@ function about() {
         if (popupid == 0) {
             document.querySelector(".full-page-overlay").style.display = "none"
         }
-        return 
+        return
     }
 }
 
@@ -572,7 +572,7 @@ function subjectCard() {
                     </div>
                 `)
 
-                
+
             }, 500);
         })
         // Clear the timeout wait when the cursor moves or exited the element.
@@ -598,7 +598,7 @@ function reloadPage() {
 function cannotGetPopupContentError(location, error) {
     console.warn(`Failed to get popup content for ${location}, opening to-do failed.`);
     popupOK(
-        `Can't get content.`, 
+        `Can't get content.`,
         `Timetable couldn't get the content for the page.<br><br>
 
         Please check your internet connection, or try again later.<br><br>
